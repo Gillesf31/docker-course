@@ -1,5 +1,7 @@
 FROM node:22-alpine
 
+RUN npm install -g nodemon
+
 WORKDIR /app
 
 COPY package*.json .
@@ -12,4 +14,4 @@ COPY . .
 # Use `docker run -p 4000:4000` to actually map the port.
 EXPOSE 4000
 
-CMD ["node", "app.js"]
+CMD ["npm", "run", "dev"]
