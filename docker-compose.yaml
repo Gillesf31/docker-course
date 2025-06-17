@@ -1,0 +1,11 @@
+services: 
+    api:
+        build: ./api
+        image: api_image
+        container_name: api_container
+        ports:
+            - "4000:4000"
+        volumes: 
+            - ./api:/app
+            - /app/node_modules
+      
